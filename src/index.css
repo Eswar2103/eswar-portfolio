@@ -1,0 +1,31 @@
+@import "tailwindcss";
+@tailwind utilities;
+
+body {
+  background-color: #121212;
+  margin: 0;
+  min-height: 100vh;
+  background-image:
+    radial-gradient(hsla(0, 0%, 100%, 0.3), transparent 2px),
+    radial-gradient(hsla(0, 0%, 100%, 0.3), transparent 2px);
+  background-size:
+    60px 60px,
+    30px 30px;
+  background-position:
+    0px 0px,
+    60px 60px;
+  animation: moveDots 60s linear infinite;
+}
+
+@keyframes moveDots {
+  from {
+    background-position:
+      0 0,
+      60px 60px;
+  }
+  to {
+    background-position:
+      100px 100px,
+      200px 200px;
+  }
+}
