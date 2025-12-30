@@ -29,3 +29,43 @@ body {
       200px 200px;
   }
 }
+
+#map-g > path {
+  fill: #1f2937;
+}
+
+.land {
+  stroke: white;
+  stroke-opacity: 1;
+}
+
+#map-g > path#IN-AP {
+  fill: #f7c205da;
+}
+
+#map-g > path#IN-KA {
+  fill: #e72806cc;
+}
+
+.annotation-box::after {
+  content: "";
+  position: absolute;
+  border-width: 10.5px;
+  /* border-style: solid; */
+  top: 99%;
+  left: 45%;
+  z-index: 1;
+  border-color: rgba(56, 178, 172, 0.8) transparent transparent transparent;
+}
+
+.annotation-box::before {
+  content: "";
+  position: absolute;
+  top: 98.3%;
+  left: 46.6%;
+  border-width: 9px;
+  border-style: solid;
+  z-index: 2;
+
+  border-color: rgba(0, 0, 0, 1) transparent transparent transparent;
+}

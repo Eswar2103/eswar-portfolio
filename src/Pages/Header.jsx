@@ -8,7 +8,7 @@ function Header() {
     { item: "Get in touch", to: "/getintouch" },
   ];
   return (
-    <div className="sticky flex justify-center items-center text-black mt-5 z-50">
+    <div className="flex justify-center items-center text-black mt-5 z-50 duration-300 transition-all ease-linear">
       <div className="bg-white/30 px-5 py-3">
         {menu.map((m) => (
           <Link
