@@ -17,6 +17,10 @@ body {
   animation: moveDots 60s linear infinite;
 }
 
+@utility scroll-hidden {
+  @apply [scrollbar-width:none] [&::-webkit-scrollbar]:hidden;
+}
+
 @keyframes moveDots {
   from {
     background-position:
@@ -31,12 +35,12 @@ body {
 }
 
 #map-g > path {
-  fill: #1f2937;
+  fill: #1f2c3d;
 }
 
 .land {
   stroke: white;
-  stroke-opacity: 1;
+  stroke-opacity: 10;
 }
 
 #map-g > path#IN-AP {
@@ -50,10 +54,9 @@ body {
 .annotation-box::after {
   content: "";
   position: absolute;
-  border-width: 10.5px;
-  /* border-style: solid; */
-  top: 99%;
-  left: 45%;
+  border-width: 10px;
+  top: 99.5%;
+  left: 42%;
   z-index: 1;
   border-color: rgba(56, 178, 172, 0.8) transparent transparent transparent;
 }
@@ -62,10 +65,9 @@ body {
   content: "";
   position: absolute;
   top: 98.3%;
-  left: 46.6%;
-  border-width: 9px;
+  left: 43.6%;
+  border-width: 8px;
   border-style: solid;
   z-index: 2;
-
   border-color: rgba(0, 0, 0, 1) transparent transparent transparent;
 }
