@@ -1,5 +1,3 @@
-import { useEffect, useRef, useState } from "react";
-
 const data = [
   {
     title: "Senior Engineer",
@@ -61,7 +59,7 @@ function Journey({ itemsRef, activeElement }) {
             <p className="text-2xl">{d.instituteName}</p>
             <p className="text-[13px]">{d.title}</p>
             {d.skills && (
-              <p className="text-[14px]"> {`Developed in: ${d.skills}`}</p>
+              <p className="text-[14px]"> {`Experience in: ${d.skills}`}</p>
             )}
             {d.exp && <p>{d.exp}</p>}
 
