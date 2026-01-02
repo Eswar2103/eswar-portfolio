@@ -2,11 +2,13 @@ import { useEffect, useRef, useState } from "react";
 import Annotation from "../components/Annotation";
 import IndiaMap from "../components/IndiaMap";
 import Journey from "../components/Journey";
+import { experience } from "../Utils";
 
 function Home() {
   const itemsRef = useRef([]);
   const [activeElement, setActiveElement] = useState(null);
   const [annotationHighlight, setAnnotationHighlight] = useState("");
+  const exp = experience();
   useEffect(() => {
     const container = document.getElementById("journey");
     function scrollJourney() {
@@ -33,7 +35,6 @@ function Home() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            console.log("entry---:", entry.target.classList);
             if (entry.target.classList.contains("schooling")) {
               setAnnotationHighlight("ap");
             } else {
@@ -61,8 +62,17 @@ function Home() {
       <div className="flex items-center justify-center mt-8">
         <div className="bg-white w-[800px] h-[300px] grid grid-cols-3 p-4 gap-4">
           <div className="bg-amber-400 flex items-center justify-center">1</div>
-          <div className="col-span-2 bg-pink-400 flex items-center justify-center">
-            2
+          <div className="col-span-2 flex items-center justify-center font-bold text-justify">
+            Hello, I'm Guru Eswar Sainath Reddy Kummithi (Eswar), a
+            Bengaluru-based software developer with {exp} of professional
+            experience. <br />
+            <br />I specialize in building scalable web applications using React
+            JS, JavaScript, Node.js, and MongoDB, with additional expertise in
+            Rust for systems programming. My work spans both front-end and
+            back-end development, making me a versatile full-stack engineer. I
+            also have hands-on experience with AWS services such as Lambda, S3,
+            API Gateway, CloudFront, and DynamoDB, enabling me to design and
+            deploy cloud-native solutions.
           </div>
         </div>
       </div>

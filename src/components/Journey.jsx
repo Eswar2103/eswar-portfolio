@@ -4,7 +4,7 @@ const data = [
     instituteName: "Tata Elxsi",
     timePeriod: "2023 - Present",
     skills:
-      "React, Javascript, NodeJS, Rust, MongoDB, Jest, AWS(lamda, s3, api gateway, cloud front, dynamoDB)",
+      "React JS, Javascript, NodeJS, Rust, MongoDB, Jest, AWS(Lambda, S3, API Gateway, CloudFront, DynamoDB)",
     exp: "2 years",
     type: "IT",
   },
@@ -13,7 +13,7 @@ const data = [
     instituteName: "Tata Elxsi",
     timePeriod: "2021 - 2023",
     skills:
-      "React, Javascript, NodeJS, MongoDB, Jest, AWS(lamda, s3, api gateway)",
+      "React JS, Javascript, NodeJS, MongoDB, Jest, AWS(Lambda, S3, API Gateway)",
     exp: "2 years",
     type: "IT",
   },
