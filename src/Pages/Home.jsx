@@ -60,9 +60,9 @@ function Home() {
   return (
     <div>
       <div className="flex items-center justify-center mt-8">
-        <div className="bg-white w-[800px] h-[300px] grid grid-cols-3 p-4 gap-4">
+        <div className="bg-stone-300 w-[1000px] h-[300px] grid grid-cols-3 p-4 gap-4 rounded-xl">
           <div className="bg-amber-400 flex items-center justify-center">1</div>
-          <div className="col-span-2 flex items-center justify-center font-bold text-justify">
+          <div className="col-span-2 flex items-center justify-center font-bold text-justify -translate-1">
             Hello, I'm Guru Eswar Sainath Reddy Kummithi (Eswar), a
             Bengaluru-based software developer with {exp} of professional
             experience. <br />
