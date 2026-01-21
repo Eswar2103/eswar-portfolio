@@ -44,31 +44,34 @@ const data = [
 ];
 
 function Journey({ itemsRef, activeElement }) {
+  console.log("activeElement---:", activeElement);
   return (
-    <div className="relative flex flex-col justify-center gap-y-10 text-[12px] py-12 my-22">
-      <div className="absolute left-[3%] top-[5%] h-[85%] w-[2px] bg-gray-300/40"></div>
-      {data.map((d, i) => (
-        <div key={d.title} className="relative">
-          <div
-            ref={(el) => (itemsRef.current[i] = el)}
-            className={`absolute left-[1.4%] top-8 w-4 h-4 rounded-full  ${i == activeElement ? "bg-teal-500" : "bg-teal-200"} ${d.type}`}
-          ></div>
-          <div
-            className={`ml-10 text-gray-100 font-bold px-3 py-2 rounded-lg shadow-lg border w-[340px] backdrop-blur ${i == activeElement ? "border-teal-400 border-2" : "border-teal-400/50 blur-[4px]"}`}
-          >
-            <p className="text-2xl">{d.instituteName}</p>
-            <p className="text-[13px]">{d.title}</p>
-            {d.skills && (
-              <p className="text-[14px]"> {`Experience in: ${d.skills}`}</p>
-            )}
-            {d.exp && <p>{d.exp}</p>}
+    <div className="flex justify-center">
+      <div className="relative flex flex-col justify-center gap-y-10 text-[12px] py-12 my-22 h-[450px] sm:h-auto">
+        <div className="absolute left-[3%] top-[5%] h-[85%] w-[2px] bg-gray-300/40"></div>
+        {data.map((d, i) => (
+          <div key={d.title} className="relative">
+            <div
+              ref={(el) => (itemsRef.current[i] = el)}
+              className={`absolute left-[1.4%] top-8 w-4 h-4 rounded-full  ${i == activeElement ? "bg-teal-500" : "bg-teal-200"} ${d.type}`}
+            ></div>
+            <div
+              className={`ml-10 text-gray-100 font-bold px-3 py-2 rounded-lg shadow-lg border w-[300px] sm:w-[340px] backdrop-blur ${i == activeElement ? "border-teal-400 border-2" : "border-teal-400/50 blur-[4px]"}`}
+            >
+              <p className="text-2xl">{d.instituteName}</p>
+              <p className="text-[13px]">{d.title}</p>
+              {d.skills && (
+                <p className="text-[14px]"> {`Experience in: ${d.skills}`}</p>
+              )}
+              {d.exp && <p>{d.exp}</p>}
 
-            <p>{d.boardName}</p>
-            <p>{d.percentage}</p>
-            <p>{d.timePeriod}</p>
+              <p>{d.boardName}</p>
+              <p>{d.percentage}</p>
+              <p>{d.timePeriod}</p>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 }

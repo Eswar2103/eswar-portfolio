@@ -3,7 +3,7 @@ function IndiaMap() {
     <svg
       version="1.1"
       viewBox="-45 70 750 780"
-      className="w-120 h-120 block mx-auto"
+      className="max-[390px]:w-90 max-[390px]:h-90 w-99 h-99 sm:w-120 sm:h-120 block mx-auto"
       preserveAspectRatio="xMidYMid meet"
     >
       <g id="map-g">

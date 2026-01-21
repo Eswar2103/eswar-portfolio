@@ -9,7 +9,7 @@ function Header() {
   ];
   return (
     <div className="flex justify-center items-center text-white mt-5 z-50 duration-300 transition-all ease-linear">
-      <div className="backdrop-blur-[1px] bg-white/5 border border-white/30 px-5 py-3 rounded-lg shadow-lg">
+      <div className="backdrop-blur-[1px] bg-white/5 border border-white/30 px-5 py-3 rounded-lg shadow-lg flex flex-col sm:flex-row">
         {menu.map((m) => (
           <Link
             key={m.item}
