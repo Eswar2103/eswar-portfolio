@@ -35,7 +35,7 @@ body {
 }
 
 #map-g > path {
-  fill: #1f2c3d;
+  fill: #1d2d43;
 }
 
 .land {
@@ -55,8 +55,8 @@ body {
   content: "";
   position: absolute;
   border-width: 10px;
-  top: 99.5%;
-  left: 19%;
+  top: var(--after-top);
+  left: var(--after-left);
   z-index: 1;
   border-color: rgba(56, 178, 172, 0.8) transparent transparent transparent;
 }
@@ -64,8 +64,8 @@ body {
 .annotation-box::before {
   content: "";
   position: absolute;
-  top: 98.3%;
-  left: 20%;
+  top: var(--before-top);
+  left: var(--before-left);
   border-width: 8px;
   border-style: solid;
   z-index: 2;

@@ -51,19 +51,21 @@ function Career() {
   }, []);
 
   return (
-    <div className="mt-18 mx-auto max-w-5xl flex flex-col sm:flex-row sm:h-[450px]">
-      <div className="flex flex-col sm:flex-row relative w-[350px] sm:w-[450px] max-w-[550px] text-center">
+    <div className="mt-18 mx-auto max-w-5xl flex flex-col sm:flex-row h-auto sm:h-[450px] justify-center gap-8">
+      <div className="flex flex-col sm:flex-row relative flex-1 max-w-[550px] text-center justify-center items-center">
         <IndiaMap />
         <Annotation
-          styles="left-[57%] top-[58%] sm:left-[49%] sm:top-[63%]"
+          styles="left-[56%] top-[59%] sm:left-[53%] sm:top-[62%]"
           annotationHighlight={annotationHighlight == "ap"}
+          type="left"
         >
           <p className="font-medium text-teal-300">Andhra Pradesh</p>
           <p className="text-gray-300">Born & Schooling</p>
         </Annotation>
         <Annotation
-          styles="top-[70%] left-[24%]"
+          styles="top-[62%] left-[22%] sm:top-[63%] sm:left-[24%]"
           annotationHighlight={annotationHighlight == "ka"}
+          type="right"
         >
           <p className="font-medium text-teal-300">Karnataka</p>
           <p className="text-gray-300">B.E. & IT career</p>
@@ -71,7 +73,7 @@ function Career() {
       </div>
       <div
         id="journey"
-        className="relative flex-1 overflow-auto scroll-hidden hover:backdrop-blur-xs"
+        className="relative sm:flex-1 overflow-auto scroll-hidden sm:hover:backdrop-blur-xs h-[450px] sm:h-auto"
       >
         <Journey itemsRef={itemsRef} activeElement={activeElement} />
         <p

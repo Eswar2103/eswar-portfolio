@@ -194,7 +194,7 @@ function IndiaMap() {
         />
       </g>
       <text fill="rgba(47, 198, 190, 1)" fontSize="26" x="155" y="380">
-        Yet to explore
+        Yet to explore,
       </text>
       <text fill="rgba(47, 198, 190, 1)" fontSize="26" x="80" y="410">
         Open to new opportunities

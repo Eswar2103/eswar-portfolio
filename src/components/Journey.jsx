@@ -47,8 +47,8 @@ function Journey({ itemsRef, activeElement }) {
   console.log("activeElement---:", activeElement);
   return (
     <div className="flex justify-center">
-      <div className="relative flex flex-col justify-center gap-y-10 text-[12px] py-12 my-22 h-[450px] sm:h-auto">
-        <div className="absolute left-[3%] top-[5%] h-[85%] w-[2px] bg-gray-300/40"></div>
+      <div className="relative flex flex-col gap-y-10 text-[12px] py-12 my-22 h-auto">
+        <div className="absolute left-[3.5%] top-[5%] h-[85%] w-[2px] bg-gray-300/40"></div>
         {data.map((d, i) => (
           <div key={d.title} className="relative">
             <div
