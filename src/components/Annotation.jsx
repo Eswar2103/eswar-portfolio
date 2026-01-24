@@ -1,5 +1,15 @@
-function Annotation({ children, styles, annotationHighlight, type }) {
-  const customStyles = {};
+function Annotation({
+  children,
+  styles,
+  annotationHighlight,
+  type,
+  extraStyles,
+  state,
+}) {
+  const customStyles = {
+    ...extraStyles,
+  };
+
   if (type === "left") {
     customStyles["--before-top"] = "98.3%";
     customStyles["--before-left"] = "17%";
@@ -13,7 +23,8 @@ function Annotation({ children, styles, annotationHighlight, type }) {
   }
   return (
     <div
-      className={`absolute annotation-box -translate-x-1/2 -translate-y-full bg-black/80 backdrop-blur max-[390px]:text-[0.6rem] text-[0.7rem] text-gray-200 px-2 py-1.5 rounded-md shadow-lg border border-teal-400/50 z-50 ${styles} ${annotationHighlight ? "border-teal-400 scale-120" : ""}`}
+      id={`annotation-box-${state}`}
+      className={`absolute annotation-box bg-black/80 backdrop-blur max-[390px]:text-[0.6rem] text-[0.7rem] text-gray-200 px-2 py-1.5 rounded-md shadow-lg border border-teal-400/50 ${styles} ${annotationHighlight ? "border-teal-400 scale-120" : ""}`}
       style={customStyles}
     >
       {children}

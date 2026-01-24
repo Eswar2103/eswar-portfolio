@@ -44,7 +44,6 @@ const data = [
 ];
 
 function Journey({ itemsRef, activeElement }) {
-  console.log("activeElement---:", activeElement);
   return (
     <div className="flex justify-center">
       <div className="relative flex flex-col gap-y-10 text-[12px] py-12 my-22 h-auto">

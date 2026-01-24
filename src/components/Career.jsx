@@ -7,6 +7,7 @@ function Career() {
   const itemsRef = useRef([]);
   const [activeElement, setActiveElement] = useState(null);
   const [annotationHighlight, setAnnotationHighlight] = useState("");
+  const [positions, setPositions] = useState({});
 
   useEffect(() => {
     const container = document.getElementById("journey");
@@ -50,22 +51,83 @@ function Career() {
     };
   }, []);
 
+  useEffect(() => {
+    const svg = document.getElementById("india-map");
+    const apPoint = document.getElementById("ap-point");
+    const annotationAp = document.getElementById("annotation-box-ap");
+    const kaPoint = document.getElementById("ka-point");
+    const annotationKa = document.getElementById("annotation-box-ka");
+    const parent = svg.parentElement;
+
+    function calculatePosition() {
+      if (
+        !svg ||
+        !parent ||
+        !apPoint ||
+        !annotationAp ||
+        !kaPoint ||
+        !annotationKa
+      )
+        return;
+
+      function calculateStateBasedPosition(statePoint, annotation) {
+        const pt = svg.createSVGPoint();
+        pt.x = statePoint.cx.baseVal.value;
+        pt.y = statePoint.cy.baseVal.value;
+
+        const screenPoint = pt.matrixTransform(svg.getScreenCTM());
+
+        const parentRect = parent.getBoundingClientRect();
+
+        const top = screenPoint.y - parentRect.top - annotation.offsetHeight;
+        const left =
+          screenPoint.x - parentRect.left - annotation.offsetWidth / 2;
+        return { left, top };
+      }
+
+      let apPositions = calculateStateBasedPosition(apPoint, annotationAp);
+      let kaPositions = calculateStateBasedPosition(kaPoint, annotationKa);
+
+      setPositions({
+        ap: { left: apPositions.left + 20, top: apPositions.top },
+        ka: { left: kaPositions.left - 40, top: kaPositions.top },
+      });
+    }
+
+    calculatePosition();
+
+    // Recalculate on resize
+    window.addEventListener("resize", calculatePosition);
+
+    return () => {
+      window.removeEventListener("resize", calculatePosition);
+    };
+  }, []);
+
   return (
-    <div className="mt-18 mx-auto max-w-5xl flex flex-col sm:flex-row h-auto sm:h-[450px] justify-center gap-8">
-      <div className="flex flex-col sm:flex-row relative flex-1 max-w-[550px] text-center justify-center items-center">
+    <div className="mt-18 mx-auto max-w-6xl flex flex-col md:flex-row h-auto md:h-[450px] justify-center gap-4 md:gap-8 px-4">
+      <div className="flex relative md:w-2/5 md:flex-shrink-0 text-center justify-center items-center min-h-[300px] md:min-h-0">
         <IndiaMap />
         <Annotation
-          styles="left-[56%] top-[59%] sm:left-[53%] sm:top-[62%]"
+          extraStyles={{
+            left: `${positions?.ap?.left || 0}px`,
+            top: `${positions?.ap?.top || 0}px`,
+          }}
           annotationHighlight={annotationHighlight == "ap"}
           type="left"
+          state="ap"
         >
           <p className="font-medium text-teal-300">Andhra Pradesh</p>
           <p className="text-gray-300">Born & Schooling</p>
         </Annotation>
         <Annotation
-          styles="top-[62%] left-[22%] sm:top-[63%] sm:left-[24%]"
+          extraStyles={{
+            left: `${positions?.ka?.left || 0}px`,
+            top: `${positions?.ka?.top || 0}px`,
+          }}
           annotationHighlight={annotationHighlight == "ka"}
           type="right"
+          state="ka"
         >
           <p className="font-medium text-teal-300">Karnataka</p>
           <p className="text-gray-300">B.E. & IT career</p>
@@ -73,7 +135,7 @@ function Career() {
       </div>
       <div
         id="journey"
-        className="relative sm:flex-1 overflow-auto scroll-hidden sm:hover:backdrop-blur-xs h-[450px] sm:h-auto"
+        className="relative md:flex-1 overflow-auto scroll-hidden sm:hover:backdrop-blur-xs h-[450px]"
       >
         <Journey itemsRef={itemsRef} activeElement={activeElement} />
         <p
