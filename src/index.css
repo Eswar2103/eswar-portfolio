@@ -71,3 +71,9 @@ body {
   z-index: 2;
   border-color: rgba(0, 0, 0, 1) transparent transparent transparent;
 }
+
+.grid-auto-fit {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 480px));
+  justify-content: center;
+}
