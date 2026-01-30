@@ -106,7 +106,7 @@ function Career() {
 
   return (
     <div className="mt-18 mx-auto max-w-6xl flex flex-col md:flex-row h-auto md:h-[450px] justify-center gap-4 md:gap-8 px-4">
-      <div className="flex relative md:w-2/5 md:flex-shrink-0 text-center justify-center items-center min-h-[300px] md:min-h-0">
+      <div className="flex relative md:w-2/5 lg:w-1/2 text-center justify-center items-center">
         <IndiaMap />
         <Annotation
           extraStyles={{
@@ -135,12 +135,12 @@ function Career() {
       </div>
       <div
         id="journey"
-        className="relative md:flex-1 overflow-auto scroll-hidden sm:hover:backdrop-blur-xs h-[450px]"
+        className="relative md:flex-1 min-[550px]:max-[767px]:w-[70%] min-[550px]:max-[767px]:mx-auto overflow-auto scroll-hidden sm:hover:backdrop-blur-xs h-[450px] text-center"
       >
         <Journey itemsRef={itemsRef} activeElement={activeElement} />
         <p
           id="scroll-down"
-          className="absolute opacity-100 transition-opacity duration-100 ease-in-out top-[91%] font-bold text-center bg-linear-to-t from-black/70 via-black/90 to-transparent text-white w-full py-2"
+          className="absolute  opacity-100 transition-opacity duration-100 ease-in-out top-[91%] font-bold bg-linear-to-t from-black/70 via-black/90 to-transparent text-white w-full py-2"
         >
           Scroll down ⬇️
         </p>

@@ -9,6 +9,7 @@ function Projects() {
         "Built and maintained scalable UI for a streaming platform with 200K+ viewers & 50K+ subscribers across smart TVs and web.",
         "Implemented React Router navigation, Redux state management, and OAuth 2.0 + OIDC authentication.",
         "Optimized responsive layouts for large screens and collaborated with backend/product teams for API alignment.",
+        "Collaborated with backend and product teams to align UI functionality with APIs and business requirements.",
       ],
       techStack: "React, Tailwind CSS, Redux, React Router, OAuth 2.0/OIDC",
     },
@@ -17,7 +18,9 @@ function Projects() {
       description: [
         "Developed internal platform to catalog automation projects, enabling reuse and faster development.",
         "Built React dashboards/forms, integrated Node.js  + Express REST APIs, and designed MongoDB schemas.",
-        "Deployed on AWS (CloudFront) with search/filter features for quick project discovery.",
+        "Enabled search and filtering functionality to help teams quickly identify suitable automation projects based on requirements. ",
+        "Deployed and hosted the application on AWS, using CloudFront for fast, secure content delivery. ",
+        "Worked closely with cross-functional teams to align the application with internal workflows and development standards. ",
       ],
       techStack: "React, Node.js, Express, MongoDB, AWS (CloudFront)",
     },
