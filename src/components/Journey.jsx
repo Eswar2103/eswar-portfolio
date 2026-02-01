@@ -52,7 +52,7 @@ function Journey({ itemsRef, activeElement }) {
           <div key={d.title} className="relative">
             <div
               ref={(el) => (itemsRef.current[i] = el)}
-              className={`absolute left-[1.4%] top-8 w-4 h-4 rounded-full  ${i == activeElement ? "bg-teal-500" : "bg-teal-200"} ${d.type}`}
+              className={`absolute left-[1.2%] md:left-[1.7%] top-8 w-4 h-4 rounded-full  ${i == activeElement ? "bg-teal-500" : "bg-teal-200"} ${d.type}`}
             ></div>
             <div
               className={`ml-10 text-gray-100 font-bold px-3 py-2 rounded-lg shadow-lg border w-[300px] sm:w-[340px] backdrop-blur ${i == activeElement ? "border-teal-400 border-2" : "border-teal-400/50 blur-[4px]"}`}

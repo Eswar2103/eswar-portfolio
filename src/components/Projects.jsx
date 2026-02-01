@@ -69,6 +69,7 @@ function Projects() {
       </div>
       <Projectsgrid projects={projectsOverview} />
     </div>
+    // <div className="bg-[#1A1A1A] mt-25">Projects</div>
   );
 }
 

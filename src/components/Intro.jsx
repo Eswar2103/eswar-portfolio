@@ -57,7 +57,7 @@ function MobileIntro({ exp }) {
         <div className="flex justify-center items-center">
           <SocialMediaButtons />
         </div>
-        <div className="text-white px-5 text-center">
+        <div className="text-white px-5 text-center tracking-wider">
           <Introtext exp={exp} />
         </div>
         <AdditionalButtons />
@@ -77,7 +77,7 @@ function DesktopIntro({ exp }) {
         </div>
         <div className="col-span-3 bg-[#1A1A1A]">
           <div className="flex flex-col justify-center items-center h-full gap-5">
-            <div className="w-[60%] text-white text-center font-bold text-lg ml-20">
+            <div className="w-[60%] text-white text-center font-bold text-lg ml-20 tracking-wider">
               <Introtext exp={exp} />
             </div>
             <AdditionalButtons />
