@@ -5,9 +5,9 @@ import Footer from "./Pages/Footer";
 function AppLayout() {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <Outlet />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

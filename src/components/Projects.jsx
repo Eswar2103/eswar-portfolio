@@ -11,7 +11,7 @@ function Projects() {
         "Optimized responsive layouts for large screens and collaborated with backend/product teams for API alignment.",
         "Collaborated with backend and product teams to align UI functionality with APIs and business requirements.",
       ],
-      techStack: "React, Tailwind CSS, Redux, React Router, OAuth 2.0/OIDC",
+      techStack: "React, Tailwind CSS, Redux, React Router, OAuth 2.0 + OIDC",
     },
     {
       title: "Full Stack Developer – Internal Automation Catalogue Platform",

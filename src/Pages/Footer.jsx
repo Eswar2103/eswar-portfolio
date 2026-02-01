@@ -20,19 +20,4 @@ function Footer() {
   );
 }
 
-function SocialMediaIcon({ children, href, ariaLabel }) {
-  return (
-    <a
-      className="mx-2 text-3xl text-teal-300 hover:text-teal-500 transition-all duration-300 ease-in-out"
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label={ariaLabel}
-    >
-      {children}
-      <span className="sr-only">Open in new tab</span>
-    </a>
-  );
-}
-
 export default Footer;

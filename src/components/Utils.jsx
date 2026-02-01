@@ -2,7 +2,7 @@ function Projectsgrid({ projects }) {
   return (
     <div className="grid max-w-[1100px] w-full px-4 gap-5">
       {projects.map((p) => (
-        <ProjectItem p={p} />
+        <ProjectItem key={p.title} p={p} />
       ))}
     </div>
   );
@@ -27,4 +27,19 @@ function ProjectItem({ p }) {
   );
 }
 
-export { Projectsgrid, ProjectItem };
+function SocialMediaIcon({ children, href, ariaLabel }) {
+  return (
+    <a
+      className="mx-2 text-3xl text-teal-300 hover:text-teal-500 transition-all duration-300 ease-in-out"
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={ariaLabel}
+    >
+      {children}
+      <span className="sr-only">Open in new tab</span>
+    </a>
+  );
+}
+
+export { Projectsgrid, ProjectItem, SocialMediaIcon };
