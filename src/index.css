@@ -5,16 +5,20 @@ body {
   background-color: #121212;
   margin: 0;
   min-height: 100vh;
-  background-image:
-    radial-gradient(hsla(0, 0%, 100%, 0.3), transparent 2px),
-    radial-gradient(hsla(0, 0%, 100%, 0.3), transparent 2px);
+  /* background-image:
+    radial-gradient(hsla(0, 0%, 100%, 0.2), transparent 2px),
+    radial-gradient(hsla(0, 0%, 100%, 0.2), transparent 2px);
   background-size:
     60px 60px,
     30px 30px;
   background-position:
     0px 0px,
-    60px 60px;
-  animation: moveDots 60s linear infinite;
+    60px 60px; */
+  /* animation: moveDots 60s linear infinite; */
+}
+
+@utility scroll-hidden {
+  @apply [scrollbar-width:none] [&::-webkit-scrollbar]:hidden;
 }
 
 @keyframes moveDots {
@@ -28,4 +32,48 @@ body {
       100px 100px,
       200px 200px;
   }
+}
+
+#map-g > path {
+  fill: #1d2d43;
+}
+
+.land {
+  stroke: white;
+  stroke-opacity: 10;
+}
+
+#map-g > path#IN-AP {
+  fill: #f7c205da;
+}
+
+#map-g > path#IN-KA {
+  fill: #e72806cc;
+}
+
+.annotation-box::after {
+  content: "";
+  position: absolute;
+  border-width: 10px;
+  top: var(--after-top);
+  left: var(--after-left);
+  z-index: 1;
+  border-color: rgba(56, 178, 172, 0.8) transparent transparent transparent;
+}
+
+.annotation-box::before {
+  content: "";
+  position: absolute;
+  top: var(--before-top);
+  left: var(--before-left);
+  border-width: 8px;
+  border-style: solid;
+  z-index: 2;
+  border-color: rgba(0, 0, 0, 1) transparent transparent transparent;
+}
+
+.grid-auto-fit {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 480px));
+  justify-content: center;
 }
