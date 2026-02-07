@@ -42,4 +42,15 @@ function SocialMediaIcon({ children, href, ariaLabel }) {
   );
 }
 
-export { Projectsgrid, ProjectItem, SocialMediaIcon };
+function LoadingScreen({ text }) {
+  return (
+    <div className="flex flex-col items-center justify-center h-screen bg-white">
+      <div className="animate-spin rounded-full h-20 w-20 border-t-4 border-teal-500 border-solid mb-6"></div>
+      <p className="text-xl text-teal-500 font-semibold">
+        {text || "Loading, please wait..."}
+      </p>
+    </div>
+  );
+}
+
+export { Projectsgrid, ProjectItem, SocialMediaIcon, LoadingScreen };

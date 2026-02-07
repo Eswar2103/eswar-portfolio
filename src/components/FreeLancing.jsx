@@ -17,7 +17,7 @@ function FreeLancing() {
     },
   ];
   return (
-    <div className="mt-10 flex flex-col justify-center items-center gap-5">
+    <div className="my-10 flex flex-col justify-center items-center gap-5">
       <div className="text-teal-400 flex items-center gap-x-2 border border-stone-600 bg-black/40 px-2 py-1 rounded-lg text-lg uppercase font-bold tracking-widest">
         <img src="./freelancing.png" className="w-9 h-8" />
         <p className="tracking-wider">Freelancing</p>

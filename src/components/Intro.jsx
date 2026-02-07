@@ -5,6 +5,7 @@ import { FaLinkedin } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { IoIosMail, IoMdDownload } from "react-icons/io";
 import { FaRegEye } from "react-icons/fa";
+import { useState } from "react";
 
 function Intro() {
   const exp = experience();
@@ -48,11 +49,8 @@ function MobileIntro({ exp }) {
     <div className="block md:hidden relative bg-gray-900 py-5">
       <div className="absolute inset-0 bg-linear-to-b from-[#0c8f98] via-black to-transparent h-[500px]" />
       <div className="relative flex flex-col justify-center items-center gap-6">
-        <div className="mt-20">
-          <img
-            src="./Eswar.jpg"
-            className="w-[220px] h-[220px] rounded-full border-3"
-          />
+        <div className="relative mt-20 w-[220px] h-[220px] rounded-full border-3 overflow-hidden">
+          <Image />
         </div>
         <div className="flex justify-center items-center">
           <SocialMediaButtons />
@@ -83,10 +81,10 @@ function DesktopIntro({ exp }) {
             <AdditionalButtons />
           </div>
         </div>
-        <img
-          src="./Eswar.jpg"
-          className="absolute w-[20vw] h-[20vw] rounded-full left-1/4 top-1/2 -translate-x-1/2 -translate-y-1/2 border-3 z-50"
-        />
+        <div className="absolute w-[20vw] h-[20vw] rounded-full left-1/4 top-1/2 -translate-x-1/2 -translate-y-1/2 border-3 z-50 overflow-hidden">
+          {/* <img src="./Eswar.jpg" className="" /> */}
+          <Image />
+        </div>
       </div>
     </div>
   );
@@ -107,6 +105,26 @@ function SocialMediaButtons() {
       >
         <FaLinkedin />
       </SocialMediaIcon>
+    </>
+  );
+}
+
+function Image() {
+  const [loaded, setLoaded] = useState(false);
+  return (
+    <>
+      {!loaded && (
+        <div
+          className="absolute inset-0 
+                        animate-pulse 
+                        bg-gray-300"
+        />
+      )}
+      <img
+        onLoad={() => setLoaded(true)}
+        src="./Eswar.jpg"
+        className={`w-full h-full ${loaded ? "opacity-100" : "opacity-0"}`}
+      />
     </>
   );
 }
