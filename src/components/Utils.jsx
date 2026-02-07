@@ -42,15 +42,35 @@ function SocialMediaIcon({ children, href, ariaLabel }) {
   );
 }
 
-function LoadingScreen({ text }) {
+function CareerLoadingScreen() {
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-white">
-      <div className="animate-spin rounded-full h-20 w-20 border-t-4 border-teal-500 border-solid mb-6"></div>
-      <p className="text-xl text-teal-500 font-semibold">
-        {text || "Loading, please wait..."}
-      </p>
+    // <div className="flex flex-col items-center justify-center h-100">
+    //   <div className="animate-spin rounded-full h-20 w-20 border-t-4 border-teal-500 border-solid mb-6"></div>
+    //   <p className="text-xl text-teal-500 font-semibold">
+    //     {text || "Loading, please wait..."}
+    //   </p>
+    // </div>
+    <div class="mx-auto px-4 w-full mt-20">
+      <div class="flex flex-col md:flex-row justify-center items-center animate-pulse gap-x-35 gap-y-20">
+        <div class="h-100 w-full max-w-100 rounded-2xl bg-gray-700"></div>
+        <div class="h-100 w-full max-w-100 rounded-2xl bg-gray-700"></div>
+      </div>
     </div>
   );
 }
 
-export { Projectsgrid, ProjectItem, SocialMediaIcon, LoadingScreen };
+function FadeIn({ children }) {
+  return (
+    <div className="transition-opacity duration-700 ease-in-out opacity-100">
+      {children}
+    </div>
+  );
+}
+
+export {
+  Projectsgrid,
+  ProjectItem,
+  SocialMediaIcon,
+  CareerLoadingScreen,
+  FadeIn,
+};
