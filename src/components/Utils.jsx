@@ -20,9 +20,25 @@ function ProjectItem({ p }) {
           {desc}
         </li>
       ))}
-      <p className="font-semibold pl-3">
+      <p className="font-semibold pl-3 mt-2">
         Tech Stack: <span className="font-bold">{p.techStack}</span>
       </p>
+      {p?.openSourceLinks?.length && (
+        <div className="flex flex-col">
+          {p.openSourceLinks.map((o) => (
+            <div className="flex gap-1.5">
+              <strong>{o.name}: </strong>
+              <a
+                href={o.link}
+                target="_blank"
+                className="text-[#030a8f] font-bold hover:underline"
+              >
+                {o.cover}
+              </a>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

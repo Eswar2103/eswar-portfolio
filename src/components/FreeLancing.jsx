@@ -7,13 +7,14 @@ function FreeLancing() {
         "Freelance Frontend Developer – Client Portfolio Website (Confidential)",
       description: [
         "Designed and developed a responsive portfolio website for a public figure using React and modern UI practices.",
-        "Built sections for biography, media, achievements and public engagement.",
+        "Built modular sections for biography, media, achievements and public engagement.",
         "Implemented SEO-friendly structure and performance-optimized layouts to improve visibility and loading speed.",
         "Collaborated directly with the client to gather requirements and deliver a custom visual identity.",
-        "Built a protected admin interface using JWT token–based authentication, enabling secure and automated data uploads for gallery, news, and events management.",
-        "Deployed the application using AWS (S3, API Gateway, Lambda, DynamoDB, CloudFront) with CI-based automated deployment.",
+        "Built a protected admin interface using JWT token-based authentication, enabling secure and automated data uploads for gallery, news, and events management.",
+        "Deployed a serverless architecture using AWS S3, Lambda, API Gateway, DynamoDB, and CloudFront with Cl-based automated deployment.",
       ],
-      techStack: "React, Tailwind CSS, Redux, React Router, OAuth 2.0/OIDC",
+      techStack:
+        "React, Tailwind CSS, React Router, AWS services(S3 bucket, Lamda functions, Api Gateway, DynamodDB, Cloudfront for hosting), CI/CD ",
     },
   ];
   return (
