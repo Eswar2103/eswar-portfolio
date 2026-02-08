@@ -27,16 +27,18 @@ function ProjectItem({ p }) {
         <div className="flex flex-col mt-2">
           <strong className="capitalize">Open source links -</strong>
           {p.openSourceLinks.map((o) => (
-            <div className="flex gap-1.5">
-              <strong>{o.name}: </strong>
-              <a
-                href={o.link}
-                target="_blank"
-                className="text-[#030a8f] font-bold hover:underline"
-              >
-                {o.cover}
-              </a>
-            </div>
+            <strong className="capitalize">
+              {o.name}:{" "}
+              <span>
+                <a
+                  href={o.link}
+                  target="_blank"
+                  className="text-[#030a8f] font-bold hover:underline"
+                >
+                  {o.cover}
+                </a>
+              </span>
+            </strong>
           ))}
         </div>
       )}
