@@ -1,13 +1,14 @@
 import { experience } from "../Utils";
 import { SocialMediaIcon } from "../components/Utils";
-import { FaSquareGithub } from "react-icons/fa6";
-import { FaLinkedin } from "react-icons/fa";
+import { FaLinkedin, FaSquareGithub } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { IoIosMail, IoMdDownload } from "react-icons/io";
 import { FaRegEye } from "react-icons/fa";
+import { useEffect, useState } from "react";
 
 function Intro() {
   const exp = experience();
+
   return (
     <>
       <MobileIntro exp={exp} />
@@ -17,8 +18,15 @@ function Intro() {
 }
 
 function Introtext({ exp }) {
+  const [showText, setShowText] = useState(false);
+  useEffect(() => {
+    const timer = setTimeout(() => setShowText(true), 0);
+    return () => clearTimeout(timer);
+  }, []);
   return (
-    <>
+    <div
+      className={`transition-all duration-700 ease-in ${showText ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+    >
       Hello, I'm{" "}
       <span className="text-3xl text-teal-400">
         Guru Eswar Sainath Reddy Kummithi (Eswar)
@@ -39,7 +47,7 @@ function Introtext({ exp }) {
         Lambda, S3, API Gateway, CloudFront, and DynamoDB
       </span>
       , enabling me to design and deploy cloud-native solutions.
-    </>
+    </div>
   );
 }
 
@@ -48,16 +56,13 @@ function MobileIntro({ exp }) {
     <div className="block md:hidden relative bg-gray-900 py-5">
       <div className="absolute inset-0 bg-linear-to-b from-[#0c8f98] via-black to-transparent h-[500px]" />
       <div className="relative flex flex-col justify-center items-center gap-6">
-        <div className="mt-20">
-          <img
-            src="./Eswar.jpg"
-            className="w-[220px] h-[220px] rounded-full border-3"
-          />
+        <div className="relative mt-20 w-[220px] h-[220px] rounded-full border-3 overflow-hidden">
+          <Image />
         </div>
         <div className="flex justify-center items-center">
           <SocialMediaButtons />
         </div>
-        <div className="text-white px-5 text-center">
+        <div className="text-white px-5 text-center tracking-wider">
           <Introtext exp={exp} />
         </div>
         <AdditionalButtons />
@@ -77,16 +82,15 @@ function DesktopIntro({ exp }) {
         </div>
         <div className="col-span-3 bg-[#1A1A1A]">
           <div className="flex flex-col justify-center items-center h-full gap-5">
-            <div className="w-[60%] text-white text-center font-bold text-lg ml-20">
+            <div className="w-[60%] text-white text-center font-bold text-lg ml-20 tracking-wider">
               <Introtext exp={exp} />
             </div>
             <AdditionalButtons />
           </div>
         </div>
-        <img
-          src="./Eswar.jpg"
-          className="absolute w-[20vw] h-[20vw] rounded-full left-1/4 top-1/2 -translate-x-1/2 -translate-y-1/2 border-3 z-50"
-        />
+        <div className="absolute w-[20vw] h-[20vw] rounded-full left-1/4 top-1/2 -translate-x-1/2 -translate-y-1/2 border-3 z-50 overflow-hidden">
+          <Image />
+        </div>
       </div>
     </div>
   );
@@ -107,6 +111,26 @@ function SocialMediaButtons() {
       >
         <FaLinkedin />
       </SocialMediaIcon>
+    </>
+  );
+}
+
+function Image() {
+  const [loaded, setLoaded] = useState(false);
+  return (
+    <>
+      {!loaded && (
+        <div
+          className="absolute inset-0 
+                        animate-pulse 
+                        bg-gray-500"
+        />
+      )}
+      <img
+        onLoad={() => setLoaded(true)}
+        src="./Eswar.jpg"
+        className={`w-full h-full ${loaded ? "opacity-100" : "opacity-0"}`}
+      />
     </>
   );
 }

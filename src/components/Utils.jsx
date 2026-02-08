@@ -20,9 +20,28 @@ function ProjectItem({ p }) {
           {desc}
         </li>
       ))}
-      <p className="font-semibold pl-3">
+      <p className="font-semibold pl-3 mt-2">
         Tech Stack: <span className="font-bold">{p.techStack}</span>
       </p>
+      {p?.openSourceLinks?.length && (
+        <div className="flex flex-col mt-2">
+          <strong className="capitalize">Open source links -</strong>
+          {p.openSourceLinks.map((o) => (
+            <strong className="capitalize">
+              {o.name}:{" "}
+              <span>
+                <a
+                  href={o.link}
+                  target="_blank"
+                  className="text-[#030a8f] font-bold hover:underline"
+                >
+                  {o.cover}
+                </a>
+              </span>
+            </strong>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
@@ -42,4 +61,49 @@ function SocialMediaIcon({ children, href, ariaLabel }) {
   );
 }
 
-export { Projectsgrid, ProjectItem, SocialMediaIcon };
+function CareerLoadingScreen() {
+  return (
+    <div className="mx-auto px-4 w-full mt-20">
+      <div className="flex flex-col md:flex-row justify-center items-center animate-pulse gap-x-35 gap-y-20">
+        <div className="h-100 w-full max-w-100 rounded-2xl bg-gray-700"></div>
+        <div className="h-100 w-full max-w-100 rounded-2xl bg-gray-700"></div>
+      </div>
+    </div>
+  );
+}
+
+function ProjectsLoadingScreen() {
+  return (
+    <div className="mx-auto px-4 w-full max-w-3xl mt-40 animate-pulse">
+      <div className="flex flex-col gap-6">
+        <div className="h-20 w-full rounded-xl bg-gray-700"></div>
+        <div className="h-20 w-full rounded-xl bg-gray-700"></div>
+        <div className="h-20 w-full rounded-xl bg-gray-700"></div>
+      </div>
+    </div>
+  );
+}
+
+function IndependentLoadingScreen() {
+  return (
+    <div className="mx-auto px-4 w-full max-w-3xl mt-40 animate-pulse">
+      <div className="flex flex-col gap-6">
+        <div className="h-20 w-full rounded-xl bg-gray-700"></div>
+      </div>
+    </div>
+  );
+}
+
+function FadeIn({ children }) {
+  return <div className="opacity-0 animate-fadeIn">{children}</div>;
+}
+
+export {
+  Projectsgrid,
+  ProjectItem,
+  SocialMediaIcon,
+  CareerLoadingScreen,
+  FadeIn,
+  ProjectsLoadingScreen,
+  IndependentLoadingScreen,
+};
