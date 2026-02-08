@@ -24,7 +24,8 @@ function ProjectItem({ p }) {
         Tech Stack: <span className="font-bold">{p.techStack}</span>
       </p>
       {p?.openSourceLinks?.length && (
-        <div className="flex flex-col">
+        <div className="flex flex-col mt-2">
+          <strong className="capitalize">Open source links -</strong>
           {p.openSourceLinks.map((o) => (
             <div className="flex gap-1.5">
               <strong>{o.name}: </strong>
