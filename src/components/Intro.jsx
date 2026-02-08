@@ -1,14 +1,14 @@
 import { experience } from "../Utils";
 import { SocialMediaIcon } from "../components/Utils";
-import { FaSquareGithub } from "react-icons/fa6";
-import { FaLinkedin } from "react-icons/fa";
+import { FaLinkedin, FaSquareGithub } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { IoIosMail, IoMdDownload } from "react-icons/io";
 import { FaRegEye } from "react-icons/fa";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Intro() {
   const exp = experience();
+
   return (
     <>
       <MobileIntro exp={exp} />
@@ -18,8 +18,15 @@ function Intro() {
 }
 
 function Introtext({ exp }) {
+  const [showText, setShowText] = useState(false);
+  useEffect(() => {
+    const timer = setTimeout(() => setShowText(true), 0);
+    return () => clearTimeout(timer);
+  }, []);
   return (
-    <>
+    <div
+      className={`transition-all duration-700 ease-in ${showText ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+    >
       Hello, I'm{" "}
       <span className="text-3xl text-teal-400">
         Guru Eswar Sainath Reddy Kummithi (Eswar)
@@ -40,7 +47,7 @@ function Introtext({ exp }) {
         Lambda, S3, API Gateway, CloudFront, and DynamoDB
       </span>
       , enabling me to design and deploy cloud-native solutions.
-    </>
+    </div>
   );
 }
 
@@ -82,7 +89,6 @@ function DesktopIntro({ exp }) {
           </div>
         </div>
         <div className="absolute w-[20vw] h-[20vw] rounded-full left-1/4 top-1/2 -translate-x-1/2 -translate-y-1/2 border-3 z-50 overflow-hidden">
-          {/* <img src="./Eswar.jpg" className="" /> */}
           <Image />
         </div>
       </div>
@@ -117,7 +123,7 @@ function Image() {
         <div
           className="absolute inset-0 
                         animate-pulse 
-                        bg-gray-300"
+                        bg-gray-500"
         />
       )}
       <img

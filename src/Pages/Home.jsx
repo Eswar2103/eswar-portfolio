@@ -1,6 +1,11 @@
 import { Suspense, lazy } from "react";
 import LazyScrolling from "../components/LazyScrolling";
-import { CareerLoadingScreen } from "../components/Utils";
+import {
+  CareerLoadingScreen,
+  ProjectsLoadingScreen,
+  IndependentLoadingScreen,
+  FadeIn,
+} from "../components/Utils";
 
 const Career = lazy(() => import("../components/Career"));
 const FreeLancing = lazy(() => import("../components/FreeLancing"));
@@ -13,17 +18,23 @@ function Home() {
       <Intro />
       <LazyScrolling>
         <Suspense fallback={<CareerLoadingScreen />}>
-          <Career />
+          <FadeIn>
+            <Career />
+          </FadeIn>
         </Suspense>
       </LazyScrolling>
       <LazyScrolling>
-        <Suspense>
-          <Projects />
+        <Suspense fallback={<ProjectsLoadingScreen />}>
+          <FadeIn>
+            <Projects />
+          </FadeIn>
         </Suspense>
       </LazyScrolling>
       <LazyScrolling>
-        <Suspense>
-          <FreeLancing />
+        <Suspense fallback={<IndependentLoadingScreen />}>
+          <FadeIn>
+            <FreeLancing />
+          </FadeIn>
         </Suspense>
       </LazyScrolling>
     </>

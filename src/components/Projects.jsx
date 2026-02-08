@@ -1,5 +1,4 @@
-import { MdOutlineMonitor } from "react-icons/md";
-import { ProjectItem, Projectsgrid } from "./Utils";
+import { Projectsgrid } from "./Utils";
 
 function Projects() {
   const projectsOverview = [
@@ -63,13 +62,12 @@ function Projects() {
 
   return (
     <div className="mt-25 flex flex-col items-center justify-center gap-5">
-      <div className="text-teal-400 flex gap-x-2 border border-stone-600 bg-black/40 px-2 py-1 rounded-lg text-xl uppercase font-bold tracking-widest">
-        <MdOutlineMonitor className="text-3xl" />
+      <div className="text-teal-400 flex justify-center items-center gap-x-2 border border-stone-600 bg-black/40 px-2 py-1 rounded-lg text-lg uppercase font-bold tracking-widest">
+        <img src="./projects.png" className="w-9 h-8" />
         <p className="tracking-wider">Projects</p>
       </div>
       <Projectsgrid projects={projectsOverview} />
     </div>
-    // <div className="bg-[#1A1A1A] mt-25">Projects</div>
   );
 }
 

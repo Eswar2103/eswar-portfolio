@@ -1,4 +1,4 @@
-import { ProjectItem, Projectsgrid } from "./Utils";
+import { Projectsgrid } from "./Utils";
 
 function FreeLancing() {
   let data = [
@@ -18,9 +18,9 @@ function FreeLancing() {
   ];
   return (
     <div className="my-10 flex flex-col justify-center items-center gap-5">
-      <div className="text-teal-400 flex items-center gap-x-2 border border-stone-600 bg-black/40 px-2 py-1 rounded-lg text-lg uppercase font-bold tracking-widest">
+      <div className="text-teal-400 flex items-center justify-center gap-x-2 border border-stone-600 bg-black/40 px-2 py-1 rounded-lg text-lg uppercase font-bold tracking-widest">
         <img src="./freelancing.png" className="w-9 h-8" />
-        <p className="tracking-wider">Freelancing</p>
+        <p className="tracking-wider">Independent Projects</p>
       </div>
       <Projectsgrid projects={data} />
     </div>

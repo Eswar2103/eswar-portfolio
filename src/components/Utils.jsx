@@ -44,27 +44,39 @@ function SocialMediaIcon({ children, href, ariaLabel }) {
 
 function CareerLoadingScreen() {
   return (
-    // <div className="flex flex-col items-center justify-center h-100">
-    //   <div className="animate-spin rounded-full h-20 w-20 border-t-4 border-teal-500 border-solid mb-6"></div>
-    //   <p className="text-xl text-teal-500 font-semibold">
-    //     {text || "Loading, please wait..."}
-    //   </p>
-    // </div>
-    <div class="mx-auto px-4 w-full mt-20">
-      <div class="flex flex-col md:flex-row justify-center items-center animate-pulse gap-x-35 gap-y-20">
-        <div class="h-100 w-full max-w-100 rounded-2xl bg-gray-700"></div>
-        <div class="h-100 w-full max-w-100 rounded-2xl bg-gray-700"></div>
+    <div className="mx-auto px-4 w-full mt-20">
+      <div className="flex flex-col md:flex-row justify-center items-center animate-pulse gap-x-35 gap-y-20">
+        <div className="h-100 w-full max-w-100 rounded-2xl bg-gray-700"></div>
+        <div className="h-100 w-full max-w-100 rounded-2xl bg-gray-700"></div>
+      </div>
+    </div>
+  );
+}
+
+function ProjectsLoadingScreen() {
+  return (
+    <div className="mx-auto px-4 w-full max-w-3xl mt-40 animate-pulse">
+      <div className="flex flex-col gap-6">
+        <div className="h-20 w-full rounded-xl bg-gray-700"></div>
+        <div className="h-20 w-full rounded-xl bg-gray-700"></div>
+        <div className="h-20 w-full rounded-xl bg-gray-700"></div>
+      </div>
+    </div>
+  );
+}
+
+function IndependentLoadingScreen() {
+  return (
+    <div className="mx-auto px-4 w-full max-w-3xl mt-40 animate-pulse">
+      <div className="flex flex-col gap-6">
+        <div className="h-20 w-full rounded-xl bg-gray-700"></div>
       </div>
     </div>
   );
 }
 
 function FadeIn({ children }) {
-  return (
-    <div className="transition-opacity duration-700 ease-in-out opacity-100">
-      {children}
-    </div>
-  );
+  return <div className="opacity-0 animate-fadeIn">{children}</div>;
 }
 
 export {
@@ -73,4 +85,6 @@ export {
   SocialMediaIcon,
   CareerLoadingScreen,
   FadeIn,
+  ProjectsLoadingScreen,
+  IndependentLoadingScreen,
 };
