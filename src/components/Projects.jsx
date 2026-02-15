@@ -44,22 +44,22 @@ function Projects() {
         {
           name: "Ripple",
           link: "https://github.com/rdkcentral/Ripple",
-          cover: "[GitHub – Ripple Repo]",
+          cover: "[GitHub - Ripple Repo]",
         },
         {
           name: "Cypress & JavaScript Test Client(FCS)",
           link: "https://github.com/rdkcentral/firebolt-certification-suite",
-          cover: "[GitHub – Cypress Client Repo]",
+          cover: "[GitHub - Cypress Client Repo]",
         },
         {
           name: "Client based 3rd party application(FCA)",
           link: "https://github.com/rdkcentral/firebolt-certification-app",
-          cover: "[GitHub – Thirdparty app Repo]",
+          cover: "[GitHub - Thirdparty app Repo]",
         },
         {
           name: "Mock Firebolt application",
           link: "https://github.com/rdkcentral/mock-firebolt",
-          cover: "[GitHub – Mock Firebolt OS Repo]",
+          cover: "[GitHub - Mock Firebolt OS Repo]",
         },
       ],
     },
