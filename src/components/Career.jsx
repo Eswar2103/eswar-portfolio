@@ -1,10 +1,13 @@
+import { GiGraduateCap } from "react-icons/gi";
+import { TbBriefcase2 } from "react-icons/tb";
+
 function Career() {
   return (
-    <div className="mt-8 flex flex-col justify-center items-center gap-5">
+    <div className="mt-8 flex flex-col justify-center items-center gap-5 relative">
       <p className="text-3xl text-white capitalize font-semibold">
-        My <span className="text-[#0d757d]">Journey</span>
+        My <span className="text-[#0d757d] font-bold">Journey</span>
       </p>
-      <div className="flex flex-col sm:flex-row justify-around max-w-5xl w-full gap-12 px-4">
+      <div className="flex flex-col sm:flex-row justify-around max-w-6xl w-full gap-12 px-4">
         <Experience />
         <Education />
       </div>
@@ -45,7 +48,10 @@ function Experience() {
   ];
   return (
     <div className="text-white w-full max-w-xl">
-      <p className="text-xl font-bold">Work Experience</p>
+      <div className="flex items-center gap-3">
+        <TbBriefcase2 className="text-2xl text-[#0d757d]" />
+        <p className="text-xl font-bold">Work Experience</p>
+      </div>
       <div className="relative flex flex-col gap-y-8 mt-5">
         <div className="absolute h-full w-[2px] bg-[#0d757d] rounded-2xl"></div>
         {experience.map((e) => (
@@ -81,7 +87,11 @@ function Education() {
     "Express JS",
     "MongoDB",
     "Rust",
-    "AWS(S3, Lamda, Cloudfront, API Gateway, DynamoDB)",
+    "AWS S3",
+    "Api Gateway",
+    "Lamda",
+    "DynamoDB",
+    "Cloudfront",
   ];
   const education = [
     {
@@ -98,13 +108,16 @@ function Education() {
     },
   ];
   return (
-    <div className="text-white w-full max-w-[400px]">
-      <p className="text-xl font-bold">Education</p>
+    <div className="text-white w-full max-w-[420px]">
+      <div className="flex items-center gap-3">
+        <GiGraduateCap className="text-2xl text-[#0d757d]" />
+        <p className="text-xl font-bold">Education</p>
+      </div>
       <div className="flex flex-col gap-y-5 mt-5 w-full text-md">
         {education.map((e) => (
           <div
             key={e.course}
-            className="rounded-2xl bg-white/10 px-5 py-5 w-full capitalize border border-teal-600"
+            className="rounded-2xl bg-white/10 px-5 py-5 w-full capitalize border border-teal-600 font-bold"
           >
             <div className="flex justify-between">
               <p>{e.course}</p>
@@ -117,13 +130,10 @@ function Education() {
           </div>
         ))}
         <div className="bg-[#0d757d] rounded-2xl px-5 py-7">
-          <strong>Core Stack</strong>
+          <strong className="text-amber-500 text-xl">Core Stack</strong>
           <div className="flex flex-wrap gap-3 mt-3">
             {skills.map((s) => (
-              <div
-                key={s}
-                className="max-w-[320px] flex justify-center items-center"
-              >
+              <div key={s}>
                 <p className="rounded-xl px-3 py-[2px] bg-white/15">{s}</p>
               </div>
             ))}
