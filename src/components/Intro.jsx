@@ -74,7 +74,7 @@ function MobileIntro({ exp }) {
 function DesktopIntro({ exp }) {
   return (
     <div className="hidden md:block">
-      <div className="relative w-full h-screen grid grid-cols-4">
+      <div className="relative w-full min-h-dvh grid grid-cols-4">
         <div className="col-span-1 bg-[#0a5257] relative">
           <div className="bg-gray-800 absolute inset-x-0 bottom-0 p-6 flex justify-center items-center">
             <SocialMediaButtons />

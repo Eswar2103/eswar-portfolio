@@ -1,149 +1,144 @@
-import { useEffect, useRef, useState } from "react";
-import Annotation from "../components/Annotation";
-import IndiaMap from "../components/IndiaMap";
-import Journey from "../components/Journey";
+import { GiGraduateCap } from "react-icons/gi";
+import { TbBriefcase2 } from "react-icons/tb";
 
 function Career() {
-  const itemsRef = useRef([]);
-  const [activeElement, setActiveElement] = useState(null);
-  const [annotationHighlight, setAnnotationHighlight] = useState("");
-  const [positions, setPositions] = useState({});
-
-  useEffect(() => {
-    const container = document.getElementById("journey");
-    function scrollJourney() {
-      const scrollDownContainer = document.getElementById("scroll-down");
-      if (container.scrollTop > 0) {
-        scrollDownContainer.classList.replace("opacity-100", "opacity-0");
-      } else {
-        scrollDownContainer.classList.replace("opacity-0", "opacity-100");
-      }
-    }
-    container.addEventListener("scroll", scrollJourney);
-    return () => container.removeEventListener("scroll", scrollJourney);
-  }, []);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            if (entry.target.classList.contains("schooling")) {
-              setAnnotationHighlight("ap");
-            } else {
-              setAnnotationHighlight("ka");
-            }
-            const index = itemsRef.current.indexOf(entry.target);
-            setActiveElement(index);
-          }
-        });
-      },
-      {
-        threshold: 0,
-        root: document.getElementById("journey"),
-        rootMargin: "-40% 0px -40% 0px",
-      },
-    );
-    const elements = itemsRef.current;
-    elements.forEach((el) => el && observer.observe(el));
-    return () => {
-      elements.forEach((el) => el && observer.unobserve(el));
-    };
-  }, []);
-
-  useEffect(() => {
-    const svg = document.getElementById("india-map");
-    const apPoint = document.getElementById("ap-point");
-    const annotationAp = document.getElementById("annotation-box-ap");
-    const kaPoint = document.getElementById("ka-point");
-    const annotationKa = document.getElementById("annotation-box-ka");
-    const parent = svg.parentElement;
-
-    function calculatePosition() {
-      if (
-        !svg ||
-        !parent ||
-        !apPoint ||
-        !annotationAp ||
-        !kaPoint ||
-        !annotationKa
-      )
-        return;
-
-      function calculateStateBasedPosition(statePoint, annotation) {
-        const pt = svg.createSVGPoint();
-        pt.x = statePoint.cx.baseVal.value;
-        pt.y = statePoint.cy.baseVal.value;
-
-        const screenPoint = pt.matrixTransform(svg.getScreenCTM());
-
-        const parentRect = parent.getBoundingClientRect();
-
-        const top = screenPoint.y - parentRect.top - annotation.offsetHeight;
-        const left =
-          screenPoint.x - parentRect.left - annotation.offsetWidth / 2;
-        return { left, top };
-      }
-
-      let apPositions = calculateStateBasedPosition(apPoint, annotationAp);
-      let kaPositions = calculateStateBasedPosition(kaPoint, annotationKa);
-
-      setPositions({
-        ap: { left: apPositions.left + 20, top: apPositions.top },
-        ka: { left: kaPositions.left - 40, top: kaPositions.top },
-      });
-    }
-
-    calculatePosition();
-
-    // Recalculate on resize
-    window.addEventListener("resize", calculatePosition);
-
-    return () => {
-      window.removeEventListener("resize", calculatePosition);
-    };
-  }, []);
-
   return (
-    <div className="mt-18 mx-auto max-w-6xl flex flex-col md:flex-row h-auto md:h-[450px] justify-center gap-4 md:gap-8 px-4">
-      <div className="flex relative md:w-2/5 lg:w-1/2 text-center justify-center items-center">
-        <IndiaMap />
-        <Annotation
-          extraStyles={{
-            left: `${positions?.ap?.left || 0}px`,
-            top: `${positions?.ap?.top || 0}px`,
-          }}
-          annotationHighlight={annotationHighlight == "ap"}
-          type="left"
-          state="ap"
-        >
-          <p className="font-medium text-teal-300">Andhra Pradesh</p>
-          <p className="text-gray-300">Born & Schooling</p>
-        </Annotation>
-        <Annotation
-          extraStyles={{
-            left: `${positions?.ka?.left || 0}px`,
-            top: `${positions?.ka?.top || 0}px`,
-          }}
-          annotationHighlight={annotationHighlight == "ka"}
-          type="right"
-          state="ka"
-        >
-          <p className="font-medium text-teal-300">Karnataka</p>
-          <p className="text-gray-300">B.E. & IT career</p>
-        </Annotation>
+    <div className="mt-8 flex flex-col justify-center items-center gap-5 relative">
+      <p className="text-3xl text-white capitalize font-semibold">
+        My <span className="text-[#0d757d] font-bold">Journey</span>
+      </p>
+      <div className="flex flex-col sm:flex-row justify-around max-w-6xl w-full gap-12 px-4">
+        <Experience />
+        <Education />
       </div>
-      <div
-        id="journey"
-        className="relative md:flex-1 min-[550px]:max-[767px]:w-[70%] min-[550px]:max-[767px]:mx-auto overflow-auto scroll-hidden sm:hover:backdrop-blur-xs h-[450px] text-center"
-      >
-        <Journey itemsRef={itemsRef} activeElement={activeElement} />
-        <p
-          id="scroll-down"
-          className="absolute  opacity-100 transition-opacity duration-100 ease-in-out top-[91%] font-bold bg-linear-to-t from-black/70 via-black/90 to-transparent text-white w-full py-2"
-        >
-          Scroll down ⬇️
-        </p>
+    </div>
+  );
+}
+
+function Experience() {
+  const experience = [
+    {
+      timeline: "sep 2023 - Present",
+      title: "Senior Engineer",
+      company: "Tata Elxsi",
+      description: {
+        heading:
+          "Senior Engineer — Developer Tooling Platforms, Device Automation & Cloud Platform Systems",
+        subpoints: [
+          "Built React UI, Node.js/Express REST APIs and optimized MongoDB schemas for searchable project catalog systems.",
+          "Built Rust-based device extensions enabling remote automation features like command execution, log capture, screenshots, and reboot control.",
+          "Implemented secure real-time device communication using WebSocket pub/sub architecture.",
+          "Designed and deployed serverless backend services using AWS Lambda, API Gateway, S3, and CloudFront.",
+        ],
+      },
+    },
+    {
+      timeline: "sep 2021 - 2023",
+      title: "Engineer",
+      company: "Tata Elxsi",
+      description: {
+        heading: "Software Engineer — Streaming Platform UI",
+        subpoints: [
+          "Developed scalable React UIs and dashboards for streaming TV and internal automation platforms with routing and global state management.",
+          "Integrated OAuth 2.0 / OIDC authentication and device authorization flows.",
+          "Improved reliability and UX through responsive layouts, search features, and unit test coverage with Jest.",
+        ],
+      },
+    },
+  ];
+  return (
+    <div className="text-white w-full max-w-xl">
+      <div className="flex items-center gap-3">
+        <TbBriefcase2 className="text-2xl text-[#0d757d]" />
+        <p className="text-xl font-bold">Work Experience</p>
+      </div>
+      <div className="relative flex flex-col gap-y-8 mt-5">
+        <div className="absolute h-full w-[2px] bg-[#0d757d] rounded-2xl"></div>
+        {experience.map((e) => (
+          <div key={e.timeline} className="relative">
+            <div className="absolute left-[-6px] top-8 rounded-full bg-[#0d757d] w-4 h-4"></div>
+            <div className="ml-8 rounded-xl bg-white/10 px-4 py-4">
+              <p className="text-amber-700 uppercase font-semibold">
+                {e.timeline}
+              </p>
+              <p className="font-bold text-xl tracking-wide">{e.title}</p>
+              <p className="font-bold text-md text-[#098089]">{e.company}</p>
+              <div className="flex flex-col">
+                <p className="text-white/90">{e.description.heading}</p>
+                {e.description.subpoints.map((s, i) => (
+                  <li key={i} className="text-white/60 ml-4">
+                    {s}
+                  </li>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function Education() {
+  const skills = [
+    "React JS",
+    "Javascript",
+    "Node JS",
+    "Express JS",
+    "MongoDB",
+    "Rust",
+    "AWS S3",
+    "Api Gateway",
+    "Lamda",
+    "DynamoDB",
+    "Cloudfront",
+  ];
+  const education = [
+    {
+      course: "Bachelor of Engineering",
+      passedout: "Graduated 2021",
+      branch: "Computer Science and Engineering",
+      university: "Visvesvaraya Technological University, Karnataka",
+    },
+    {
+      course: "Intermediate (IPE)",
+      passedout: "Passed out 2017",
+      branch: "Maths, Physics, Chemistry(MPC)",
+      university: "Board of Intermediate Education, Andhra Pradesh",
+    },
+  ];
+  return (
+    <div className="text-white w-full max-w-[420px]">
+      <div className="flex items-center gap-3">
+        <GiGraduateCap className="text-2xl text-[#0d757d]" />
+        <p className="text-xl font-bold">Education</p>
+      </div>
+      <div className="flex flex-col gap-y-5 mt-5 w-full text-md">
+        {education.map((e) => (
+          <div
+            key={e.course}
+            className="rounded-2xl bg-white/10 px-5 py-5 w-full capitalize border border-teal-600 font-bold"
+          >
+            <div className="flex justify-between">
+              <p>{e.course}</p>
+              <p className="rounded-md bg-amber-700/20 text-amber-600 px-1 py-0.5 text-sm">
+                {e.passedout}
+              </p>
+            </div>
+            <p className="text-sm text-[#0d757d] font-bold mt-2">{e.branch}</p>
+            <p className="text-white/50 mt-5">{e.university}</p>
+          </div>
+        ))}
+        <div className="bg-[#0d757d] rounded-2xl px-5 py-7">
+          <strong className="text-amber-500 text-xl">Core Stack</strong>
+          <div className="flex flex-wrap gap-3 mt-3">
+            {skills.map((s) => (
+              <div key={s}>
+                <p className="rounded-xl px-3 py-[2px] bg-white/15">{s}</p>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );

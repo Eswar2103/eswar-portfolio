@@ -18,9 +18,7 @@ function Home() {
       <Intro />
       <LazyScrolling>
         <Suspense fallback={<CareerLoadingScreen />}>
-          <FadeIn>
-            <Career />
-          </FadeIn>
+          <FadeIn>{<Career />}</FadeIn>
         </Suspense>
       </LazyScrolling>
       <LazyScrolling>
