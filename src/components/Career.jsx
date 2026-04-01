@@ -39,7 +39,7 @@ function Experience() {
       description: {
         heading: "Software Engineer — Streaming Platform UI",
         subpoints: [
-          "Developed scalable React UIs and dashboards for streaming TV and internal automation platforms with routing and global state management.",
+          "Developed scalable React UIs and dashboards for streaming TV and internal automation platforms with routing and global state management using redux.",
           "Integrated OAuth 2.0 / OIDC authentication and device authorization flows.",
           "Improved reliability and UX through responsive layouts, search features, and unit test coverage with Jest.",
         ],
