@@ -1,10 +1,11 @@
 function Projectsgrid({ projects }) {
   return (
-    <div className="grid max-w-[1100px] w-full px-4 gap-5">
-      {projects.map((p) => (
-        <ProjectItem key={p.title} p={p} />
-      ))}
-    </div>
+    // <div className="grid max-w-[1100px] w-full px-4 gap-5">
+    //   {projects.map((p) => (
+    //     <ProjectItem key={p.title} p={p} />
+    //   ))}
+    // </div>
+    <></>
   );
 }
 
