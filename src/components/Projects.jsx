@@ -125,7 +125,7 @@ function Projects() {
 function Projectsgrid({ projects }) {
   return (
     <div className="max-w-[1300px] w-full px-4">
-      {projects.map((p, index) => (
+      {projects.map((p) => (
         <div
           key={p.title}
           className="w-full h-auto grid grid-cols-1 md:grid-cols-5 mb-4 rounded-2xl min-h-[300px]"
