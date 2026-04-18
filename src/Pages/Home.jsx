@@ -7,7 +7,7 @@ import {
   FadeIn,
 } from "../components/Utils";
 
-const Career = lazy(() => import("../components/Career"));
+const Journey = lazy(() => import("../components/Journey"));
 const Intro = lazy(() => import("../components/Intro"));
 const Projects = lazy(() => import("../components/Projects"));
 
@@ -17,7 +17,7 @@ function Home() {
       <Intro />
       <LazyScrolling>
         <Suspense fallback={<CareerLoadingScreen />}>
-          <FadeIn>{<Career />}</FadeIn>
+          <FadeIn>{<Journey />}</FadeIn>
         </Suspense>
       </LazyScrolling>
       <LazyScrolling>

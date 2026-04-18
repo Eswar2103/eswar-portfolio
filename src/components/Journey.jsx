@@ -1,9 +1,9 @@
 import { GiGraduateCap } from "react-icons/gi";
 import { TbBriefcase2 } from "react-icons/tb";
 
-function Career() {
+function Journey() {
   return (
-    <div className="mt-8 flex flex-col justify-center items-center gap-5 relative">
+    <div className="mt-8 flex flex-col justify-center items-center gap-5 px-2">
       <p className="text-3xl text-white capitalize font-semibold">
         My <span className="text-[#0d757d] font-bold">Journey</span>
       </p>
@@ -144,4 +144,4 @@ function Education() {
   );
 }
 
-export default Career;
+export default Journey;

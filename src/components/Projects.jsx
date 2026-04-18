@@ -58,10 +58,10 @@ function Projects() {
         "Cucumber",
         "Jest",
         "WebSockets",
-        "AWS Lambda",
+        "AWS Lambda functions",
         "API Gateway",
-        "S3",
-        "CloudFront",
+        "AWS S3 bucket",
+        "CloudFront for hosting",
         "Linux",
         "CI/CD",
       ],
@@ -105,7 +105,11 @@ function Projects() {
         "React",
         "Tailwind CSS",
         "React Router",
-        "AWS services(S3 bucket, Lambda functions, API Gateway, DynamoDB, CloudFront for hosting)",
+        "AWS S3 bucket",
+        "AWS Lambda functions",
+        "API Gateway",
+        "DynamoDB",
+        "CloudFront for hosting",
         "CI/CD",
       ],
     },
@@ -128,7 +132,7 @@ function Projectsgrid({ projects }) {
       {projects.map((p) => (
         <div
           key={p.title}
-          className="w-full h-auto grid grid-cols-1 md:grid-cols-5 mb-4 rounded-2xl min-h-[300px]"
+          className="w-full h-auto grid grid-cols-1 md:grid-cols-5 mb-8 rounded-2xl min-h-[300px]"
         >
           <ProjectItem project={p} />
         </div>
