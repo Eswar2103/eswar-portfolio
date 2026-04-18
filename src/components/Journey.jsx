@@ -1,13 +1,13 @@
 import { GiGraduateCap } from "react-icons/gi";
 import { TbBriefcase2 } from "react-icons/tb";
 
-function Career() {
+function Journey() {
   return (
-    <div className="mt-8 flex flex-col justify-center items-center gap-5 relative">
+    <div className="mt-8 flex flex-col justify-center items-center gap-5 px-2">
       <p className="text-3xl text-white capitalize font-semibold">
         My <span className="text-[#0d757d] font-bold">Journey</span>
       </p>
-      <div className="flex flex-col sm:flex-row justify-around max-w-6xl w-full gap-12 px-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 max-w-6xl w-full gap-12 px-4">
         <Experience />
         <Education />
       </div>
@@ -39,7 +39,7 @@ function Experience() {
       description: {
         heading: "Software Engineer — Streaming Platform UI",
         subpoints: [
-          "Developed scalable React UIs and dashboards for streaming TV and internal automation platforms with routing and global state management.",
+          "Developed scalable React UIs and dashboards for streaming TV and internal automation platforms with routing and global state management using redux.",
           "Integrated OAuth 2.0 / OIDC authentication and device authorization flows.",
           "Improved reliability and UX through responsive layouts, search features, and unit test coverage with Jest.",
         ],
@@ -47,7 +47,7 @@ function Experience() {
     },
   ];
   return (
-    <div className="text-white w-full max-w-xl">
+    <div className="text-white w-full max-w-xl order-2 md:order-1">
       <div className="flex items-center gap-3">
         <TbBriefcase2 className="text-2xl text-[#0d757d]" />
         <p className="text-xl font-bold">Work Experience</p>
@@ -108,7 +108,7 @@ function Education() {
     },
   ];
   return (
-    <div className="text-white w-full max-w-[420px]">
+    <div className="text-white w-full max-w-[420px] order-1 md:order-2">
       <div className="flex items-center gap-3">
         <GiGraduateCap className="text-2xl text-[#0d757d]" />
         <p className="text-xl font-bold">Education</p>
@@ -144,4 +144,4 @@ function Education() {
   );
 }
 
-export default Career;
+export default Journey;
