@@ -13,7 +13,7 @@ function LazyScrolling({ children }) {
         }
       },
       {
-        threshold: 0.2,
+        threshold: 0,
         rootMargin: "50px 0px",
       },
     );

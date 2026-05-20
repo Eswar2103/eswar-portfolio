@@ -23,7 +23,7 @@ function Experience() {
       company: "Tata Elxsi",
       description: {
         heading:
-          "Senior Engineer — Developer Tooling Platforms, Device Automation & Cloud Platform Systems",
+          "Senior Engineer - Developer Tooling Platforms, Device Automation & Cloud Platform Systems",
         subpoints: [
           "Built React UI, Node.js/Express REST APIs and optimized MongoDB schemas for searchable project catalog systems.",
           "Built Rust-based device extensions enabling remote automation features like command execution, log capture, screenshots, and reboot control.",
@@ -37,7 +37,7 @@ function Experience() {
       title: "Engineer",
       company: "Tata Elxsi",
       description: {
-        heading: "Software Engineer — Streaming Platform UI",
+        heading: "Software Engineer - Streaming Platform UI",
         subpoints: [
           "Developed scalable React UIs and dashboards for streaming TV and internal automation platforms with routing and global state management using redux.",
           "Integrated OAuth 2.0 / OIDC authentication and device authorization flows.",
