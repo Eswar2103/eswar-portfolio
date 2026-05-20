@@ -1,5 +1,5 @@
 function GetInTouch() {
-  return <div></div>;
+  return <div>Get in touch</div>;
 }
 
 export default GetInTouch;
