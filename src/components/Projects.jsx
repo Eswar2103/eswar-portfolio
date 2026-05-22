@@ -192,7 +192,7 @@ function ProjectItem({ project }) {
             </p>
             <p className="text-white/70 ml-2">
               {project.problem.map((p) => (
-                <li>{p}</li>
+                <li key={p}>{p}</li>
               ))}
             </p>
           </div>
@@ -202,7 +202,7 @@ function ProjectItem({ project }) {
             </p>
             <p className="text-white/70 ml-2">
               {project.solution.map((s) => (
-                <li>{s}</li>
+                <li key={s}>{s}</li>
               ))}
             </p>
           </div>
