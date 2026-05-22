@@ -6,6 +6,7 @@ import {
   IndependentLoadingScreen,
   FadeIn,
 } from "../components/Utils";
+import GetInTouch from "../components/GetInTouch";
 
 const Journey = lazy(() => import("../components/Journey"));
 const Intro = lazy(() => import("../components/Intro"));
@@ -24,6 +25,13 @@ function Home() {
         <Suspense fallback={<ProjectsLoadingScreen />}>
           <FadeIn>
             <Projects />
+          </FadeIn>
+        </Suspense>
+      </LazyScrolling>
+      <LazyScrolling>
+        <Suspense fallback={<ProjectsLoadingScreen />}>
+          <FadeIn>
+            <GetInTouch />
           </FadeIn>
         </Suspense>
       </LazyScrolling>

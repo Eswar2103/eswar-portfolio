@@ -3,6 +3,7 @@ import "./index.css";
 import AppLayout from "./AppLayout";
 import ErrorPage from "./Pages/ErrorPage";
 import Home from "./Pages/Home";
+import GetInTouch from "./components/GetInTouch";
 
 function App() {
   const routes = createBrowserRouter([
@@ -13,6 +14,10 @@ function App() {
         {
           path: "/",
           element: <Home />,
+        },
+        {
+          path: "/getintouch",
+          element: <GetInTouch />,
         },
       ],
     },

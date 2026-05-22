@@ -160,7 +160,7 @@ function Projectsgrid({ projects }) {
       {projects.map((p) => (
         <div
           key={p.title}
-          className="w-full h-auto grid grid-cols-1 md:grid-cols-10 mb-8 rounded-2xl min-h-[300px]"
+          className="w-full h-auto grid grid-cols-1 lg:grid-cols-10 mb-8 rounded-2xl min-h-[300px]"
         >
           <ProjectItem project={p} />
         </div>
@@ -172,20 +172,20 @@ function Projectsgrid({ projects }) {
 function ProjectItem({ project }) {
   return (
     <>
-      <div className="col-span-3 bg-gray-800 rounded-t-xl md:rounded-t-none md:rounded-l-xl! px-4 md:px-10 flex flex-col justify-center py-8 gap-3">
+      <div className="col-span-3 bg-gray-800 rounded-t-xl lg:rounded-t-none lg:rounded-l-xl! px-4 lg:px-10 flex flex-col justify-center py-8 gap-3">
         <p className="text-teal-400 uppercase font-bold text-xs tracking-widest self-start">
           {project.domain}
         </p>
         <p className="text-lg text-white">{project.title}</p>
       </div>
-      <div className="col-span-7 bg-gray-700 rounded-b-xl md:rounded-b-none md:rounded-r-xl! px-4 md:px-10 flex flex-col gap-8 py-2 md:py-8">
+      <div className="col-span-7 bg-gray-700 rounded-b-xl lg:rounded-b-none lg:rounded-r-xl! px-4 lg:px-10 flex flex-col gap-8 py-2 lg:py-8">
         <div className="flex flex-col gap-3">
           <p className="uppercase text-white/80 font-bold">
             Theoretical Foundation
           </p>
           <p className="text-white/70">{project.theoreticaFoundation}</p>
         </div>
-        <div className="flex flex-col md:flex-row justify-between gap-y-4 gap-x-6">
+        <div className="flex flex-col lg:flex-row justify-between gap-y-4 gap-x-6">
           <div className="flex flex-col gap-2">
             <p className="uppercase font-bold text-[14px] text-red-600 tracking-widest">
               problem
