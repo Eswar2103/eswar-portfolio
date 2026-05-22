@@ -13,10 +13,10 @@ Live at: [eswar-k.netlify.app](https://eswar-k.netlify.app)
 
 ## Sections
 
-- **Intro** — Overview, resume download, and contact link
-- **Journey** — Professional experience timeline
-- **Projects** — Work across frontend, full-stack, and systems engineering
-- **Get in Touch** — Contact via email and social links
+- **Intro** - Overview, resume download, and contact link
+- **Journey** - Professional experience timeline
+- **Projects** - Work across frontend, full-stack, and systems engineering
+- **Get in Touch** - Contact via email and social links
 
 ## Running Locally
 

@@ -55,7 +55,7 @@ function Projects() {
       ],
       domain: "Full Stack Development",
       problem: [
-        "No single source of truth for automation projects — details and reusable components are spread across disparate documents and repositories.",
+        "No single source of truth for automation projects - details and reusable components are spread across disparate documents and repositories.",
         "Teams repeatedly rebuild existing solutions due to poor discoverability.",
         "Slower onboarding and duplicated effort across engineering groups.",
       ],
@@ -91,7 +91,7 @@ function Projects() {
       ],
       domain: "Software Engineering",
       theoreticaFoundation:
-        "Automated testing of set-top boxes at scale requires device-level control that standard test frameworks can't provide natively. Ripple's dynamic extension model — a Rust-based Firebolt gateway for managing streaming apps on set-top boxes — made it possible to plug in a native extension that exposes log capture, screenshots, and remote control directly to test workflows over secure, real-time WebSocket communication.",
+        "Automated testing of set-top boxes at scale requires device-level control that standard test frameworks can't provide natively. Ripple's dynamic extension model - a Rust-based Firebolt gateway for managing streaming apps on set-top boxes - made it possible to plug in a native extension that exposes log capture, screenshots, and remote control directly to test workflows over secure, real-time WebSocket communication.",
       problem: [
         "Standard JavaScript-based test frameworks can't provide native device-level control for Ripple set-top boxes.",
         "No unified mechanism to capture logs, take screenshots, reboot devices, or execute commands remotely.",
@@ -128,11 +128,11 @@ function Projects() {
         "CI/CD",
       ],
       theoreticaFoundation:
-        "Public figures need a professional web presence that reflects their identity while allowing them to manage content without relying on developers for routine updates. A custom-built portfolio gives full control over branding, SEO, and content architecture — while a serverless backend keeps costs low and scales with the traffic spikes common to public-facing sites.",
+        "Public figures need a professional web presence that reflects their identity while allowing them to manage content without relying on developers for routine updates. A custom-built portfolio gives full control over branding, SEO, and content architecture - while a serverless backend keeps costs low and scales with the traffic spikes common to public-facing sites.",
       problem: [
         "Generic CMS platforms limit branding control and often have poor performance characteristics.",
         "Content updates for gallery, news, and events require developer involvement, creating bottlenecks.",
-        "No ownership of infrastructure or content pipeline — fully dependent on third-party platforms.",
+        "No ownership of infrastructure or content pipeline - fully dependent on third-party platforms.",
       ],
       solution: [
         "Built a fully custom React portfolio with modular sections for biography, media, achievements, and public engagement.",
