@@ -169,7 +169,7 @@ export default function IntroText() {
 function AdditionalButtons({ showButtons }) {
   return (
     <div
-      className={`${
+      className={`transition-all duration-500 ${
         showButtons ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
       }`}
     >
